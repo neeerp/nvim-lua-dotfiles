@@ -6,14 +6,22 @@ local general = augroup("General Settings", { clear = true })
 
 -- Needed because Nvim-tree is configured to be lazy-loaded
 autocmd("VimEnter", {
-	callback = function(data)
-		local isDirectory = vim.fn.isdirectory(data.file) == 1
+  callback = function(data)
+    local isDirectory = vim.fn.isdirectory(data.file) == 1
 
-		if isDirectory then
-			vim.cmd.cd(data.file)
-			require("nvim-tree.api").tree.open()
-		end
-	end,
-	group = general,
-	desc = "Open tree when vim is opened on a directory",
+    if not isDirectory then
+      return
+    end
+    -- create a new, empty buffer
+    vim.cmd.enew()
+
+    -- wipe the directory buffer
+    vim.cmd.bw(data.buf)
+
+    -- change to the directory
+    vim.cmd.cd(data.file)
+    require("nvim-tree.api").tree.open()
+  end,
+  group = general,
+  desc = "Open tree when vim is opened on a directory",
 })
