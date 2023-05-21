@@ -18,4 +18,9 @@ local options = {
 	undofile = true,
 }
 
-set_option(options)
+local globals = {
+	mapleader = " ",
+}
+
+set_options(options)
+set_globals(globals)

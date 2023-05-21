@@ -1,2 +1,2 @@
-require("plugin-loader")
 require("core")
+require("plugin-loader")
