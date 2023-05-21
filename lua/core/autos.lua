@@ -4,7 +4,7 @@ local augroup = vim.api.nvim_create_augroup
 
 local general = augroup("General Settings", { clear = true })
 
--- TODO: Is this actually necessary?
+-- Needed because Nvim-tree is configured to be lazy-loaded
 autocmd("VimEnter", {
 	callback = function(data)
 		local isDirectory = vim.fn.isdirectory(data.file) == 1
