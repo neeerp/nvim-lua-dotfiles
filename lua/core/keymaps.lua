@@ -9,15 +9,33 @@ local modes = {
 
 local keymaps = {
 	normal_mode = {
-		["<leader>pv"] = {
-			cmd = ":NvimTreeToggle<cr>",
-		},
+		["<leader>pv"] = { cmd = [[<Cmd>NvimTreeToggle<cr>]], desc = "Open Nvim Tree" },
 
-		["<leader>h"] = { cmd = "<C-w>h" },
-		["<leader>j"] = { cmd = "<C-w>j" },
-		["<leader>k"] = { cmd = "<C-w>k" },
-		["<leader>l"] = { cmd = "<C-w>l" },
+		["<C-h>"] = { cmd = [[<Cmd>wincmd h<CR>]] },
+		["<C-j>"] = { cmd = [[<Cmd>wincmd j<CR>]] },
+		["<C-k>"] = { cmd = [[<Cmd>wincmd k<CR>]] },
+		["<C-l>"] = { cmd = [[<Cmd>wincmd l<CR>]] },
+
+		["<C-Up>"] = { cmd = [[<Cmd>resize +2<CR>]], desc = "Increase vertical size" },
+		["<C-Down>"] = { cmd = [[<Cmd>resize -2<CR>]], desc = "Decrease vertical size" },
+		["<C-Left>"] = { cmd = [[<Cmd>vertical resize +2<CR>]], desc = "Increase horizontal size" },
+		["<C-Right>"] = { cmd = [[<Cmd>vertical resize -2<CR>]], desc = "Decrease horizonal size" },
+	},
+
+	terminal_mode = {
+		["<C-h>"] = { cmd = [[<Cmd>wincmd h<CR>]] },
+		["<C-j>"] = { cmd = [[<Cmd>wincmd j<CR>]] },
+		["<C-k>"] = { cmd = [[<Cmd>wincmd k<CR>]] },
+		["<C-l>"] = { cmd = [[<Cmd>wincmd l<CR>]] },
+
+		["<C-Up>"] = { cmd = [[<Cmd>resize +2<CR>]] },
+		["<C-Down>"] = { cmd = [[<Cmd>resize -2<CR>]] },
+		["<C-Left>"] = { cmd = [[<Cmd>vertical resize +2<CR>]] },
+		["<C-Right>"] = { cmd = [[<Cmd>vertical resize -2<CR>]] },
+
+		["<Esc>"] = { cmd = [[<C-\><C-n>]], desc = "Enter normal mode" },
 	},
 }
 
 set_keymaps(keymaps.normal_mode, modes.normal_mode)
+set_keymaps(keymaps.terminal_mode, modes.terminal_mode)
