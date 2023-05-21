@@ -12,6 +12,11 @@ local keymaps = {
 		["<leader>pv"] = {
 			cmd = ":NvimTreeToggle<cr>",
 		},
+
+		["<leader>h"] = { cmd = "<C-w>h" },
+		["<leader>j"] = { cmd = "<C-w>j" },
+		["<leader>k"] = { cmd = "<C-w>k" },
+		["<leader>l"] = { cmd = "<C-w>l" },
 	},
 }
 
