@@ -75,7 +75,7 @@ return {
 				group_empty = false,
 				highlight_git = false,
 				full_name = false,
-				highlight_opened_files = "none",
+				highlight_opened_files = "name",
 				highlight_modified = "none",
 				root_folder_label = ":~:s?$?/..?",
 				indent_width = 2,
@@ -117,7 +117,7 @@ return {
 				},
 			},
 			view = {
-				cursorline = false,
+				cursorline = true,
 				float = {
 					enable = false,
 					quit_on_focus_loss = true,
