@@ -36,6 +36,19 @@ M.setup = function()
 	vim.diagnostic.config(config)
 end
 
+local function lsp_keymaps(bufnr)
+	local keymap = vim.keymap.set
+	local buf_opts = { buffer = bufnr, silent = true }
+
+	keymap("n", "gd", "<CMD>Lspsaga goto_definition<CR>", buf_opts)
+	keymap("n", "K", "<CMD>Lspsaga hover_doc<CR>", buf_opts)
+	keymap("i", "<C-k>", "<CMD>Lspsaga signature_help<CR>", buf_opts)
+	keymap("n", "gl", "<CMD>Lspsaga show_line_diagnostics<CR>", buf_opts)
+	keymap("n", "gc", "<CMD>Lspsaga show_line_cursor_diagnostics<CR>", buf_opts)
+	keymap("n", "gr", "<CMD>Lspsaga rename<CR>", buf_opts)
+	keymap("n", "gi", vim.lsp.buf.implementation, buf_opts)
+end
+
 -- Highlight the symbol under the cursor
 local function lsp_highlight(client, bufnr)
 	if client.supports_method("textDocument/documentHighlight") then
@@ -63,6 +76,7 @@ local function lsp_highlight(client, bufnr)
 end
 
 M.on_attach = function(client, bufnr)
+	lsp_keymaps(bufnr)
 	lsp_highlight(client, bufnr)
 
 	-- TODO: Why?
