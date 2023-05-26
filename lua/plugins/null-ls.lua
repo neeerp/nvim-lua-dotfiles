@@ -23,6 +23,7 @@ return {
 			end,
 			sources = {
 				formatting.stylua,
+				formatting.rustfmt,
 			},
 		})
 	end,
