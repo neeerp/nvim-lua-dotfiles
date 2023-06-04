@@ -47,6 +47,8 @@ local function lsp_keymaps(bufnr)
 	keymap("n", "gc", "<CMD>Lspsaga show_line_cursor_diagnostics<CR>", buf_opts)
 	keymap("n", "gr", "<CMD>Lspsaga rename<CR>", buf_opts)
 	keymap("n", "gi", vim.lsp.buf.implementation, buf_opts)
+
+	keymap({ "n", "v" }, "<C-e>", "<cmd>Lspsaga code_action<CR>", buf_opts)
 end
 
 -- Highlight the symbol under the cursor
