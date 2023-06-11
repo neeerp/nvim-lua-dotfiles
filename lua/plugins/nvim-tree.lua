@@ -70,6 +70,12 @@ return {
 				show_on_open_dirs = true,
 				timeout = 5000,
 			},
+			filters = {
+				custom = {
+					".*synctex.*",
+					"\\.git",
+				},
+			},
 			renderer = {
 				add_trailing = false,
 				group_empty = false,
