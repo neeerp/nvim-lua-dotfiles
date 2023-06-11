@@ -16,6 +16,9 @@ local options = {
 	termguicolors = true,
 
 	undofile = true,
+	swapfile = false,
+
+	textwidth = 80,
 }
 
 local globals = {
