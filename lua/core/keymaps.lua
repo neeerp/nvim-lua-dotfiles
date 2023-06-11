@@ -36,7 +36,6 @@ local keymaps = {
     ["<C-k>"] = { cmd = [[<Cmd>wincmd k<CR>]] },
     ["<C-l>"] = { cmd = [[<Cmd>wincmd l<CR>]] },
     ["<C-space>h"] = { cmd = [[<Cmd>wincmd h<CR>]] },
-    ["<C-space>j"] = { cmd = [[<Cmd>wincmd j<CR>]] },
     ["<C-space>k"] = { cmd = [[<Cmd>wincmd k<CR>]] },
     ["<C-space>l"] = { cmd = [[<Cmd>wincmd l<CR>]] },
 
@@ -46,6 +45,7 @@ local keymaps = {
     ["<C-Right>"] = { cmd = [[<Cmd>vertical resize -2<CR>]] },
 
     ["<Esc>"] = { cmd = [[<C-\><C-n>]], desc = "Enter normal mode" },
+    ["<C-space>j"] = { cmd = [[<C-\><C-n>]], desc = "Enter normal mode" },
   },
 }
 
