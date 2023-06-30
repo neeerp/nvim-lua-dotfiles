@@ -19,6 +19,8 @@ local options = {
 	swapfile = false,
 
 	textwidth = 80,
+
+	clipboard = "unnamedplus",
 }
 
 local globals = {
