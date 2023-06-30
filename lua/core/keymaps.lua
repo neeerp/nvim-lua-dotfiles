@@ -5,6 +5,9 @@ local modes = {
   visual_mode = "v",
   visual_block_mode = "x",
   command_mode = "c",
+  insert_abbreviation = "ia",
+  command_abbreviation = "ca",
+  abbreviation = "!a",
 }
 
 local keymaps = {
@@ -47,7 +50,16 @@ local keymaps = {
     ["<Esc>"] = { cmd = [[<C-\><C-n>]], desc = "Enter normal mode" },
     ["<C-space>j"] = { cmd = [[<C-\><C-n>]], desc = "Enter normal mode" },
   },
+
+  command_abbreviation = {
+    ["wQ"] = { cmd = "wq" },
+    ["WQ"] = { cmd = "wq" },
+    ["Wq"] = { cmd = "wq" },
+    ["W"] = { cmd = "w" },
+    ["Q"] = { cmd = "q" },
+  },
 }
 
 set_keymaps(keymaps.normal_mode, modes.normal_mode)
 set_keymaps(keymaps.terminal_mode, modes.terminal_mode)
+set_keymaps(keymaps.command_abbreviation, modes.command_abbreviation)
