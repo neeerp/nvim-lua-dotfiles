@@ -57,6 +57,9 @@ local keymaps = {
     ["Wq"] = { cmd = "wq" },
     ["W"] = { cmd = "w" },
     ["Q"] = { cmd = "q" },
+    ["Qa"] = { cmd = "qa" },
+    ["QA"] = { cmd = "qa" },
+    ["qA"] = { cmd = "qa" },
   },
 }
 
