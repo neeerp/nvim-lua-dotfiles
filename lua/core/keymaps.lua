@@ -11,6 +11,11 @@ local modes = {
 }
 
 local keymaps = {
+  insert_mode = {
+    ["<C-p>"] = { cmd = [[<Cmd>Telescope find_files<CR>]], desc = "Open fuzzy finder" },
+    ["<C-f>"] = { cmd = [[<Cmd>Telescope live_grep<CR>]], desc = "Open fuzzy finder" },
+  },
+
   normal_mode = {
     ["<leader>pv"] = { cmd = [[<Cmd>NvimTreeToggle<cr>]], desc = "Open Nvim Tree" },
 
@@ -31,6 +36,9 @@ local keymaps = {
     ["<C-Down>"] = { cmd = [[<Cmd>resize -2<CR>]], desc = "Decrease vertical size" },
     ["<C-Left>"] = { cmd = [[<Cmd>vertical resize +2<CR>]], desc = "Increase horizontal size" },
     ["<C-Right>"] = { cmd = [[<Cmd>vertical resize -2<CR>]], desc = "Decrease horizonal size" },
+
+    ["<C-p>"] = { cmd = [[<Cmd>Telescope find_files<CR>]], desc = "Open fuzzy finder" },
+    ["<C-f>"] = { cmd = [[<Cmd>Telescope live_grep<CR>]], desc = "Open fuzzy finder" },
   },
 
   terminal_mode = {
@@ -49,6 +57,9 @@ local keymaps = {
 
     ["<Esc>"] = { cmd = [[<C-\><C-n>]], desc = "Enter normal mode" },
     ["<C-space>j"] = { cmd = [[<C-\><C-n>]], desc = "Enter normal mode" },
+
+    ["<C-p>"] = { cmd = [[<Cmd>Telescope find_files<CR>]], desc = "Open fuzzy finder" },
+    ["<C-f>"] = { cmd = [[<Cmd>Telescope live_grep<CR>]], desc = "Open fuzzy finder" },
   },
 
   command_abbreviation = {
@@ -63,6 +74,7 @@ local keymaps = {
   },
 }
 
+set_keymaps(keymaps.insert_mode, modes.insert_mode)
 set_keymaps(keymaps.normal_mode, modes.normal_mode)
 set_keymaps(keymaps.terminal_mode, modes.terminal_mode)
 set_keymaps(keymaps.command_abbreviation, modes.command_abbreviation)
