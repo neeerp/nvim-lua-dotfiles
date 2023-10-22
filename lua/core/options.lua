@@ -18,7 +18,7 @@ local options = {
 	undofile = true,
 	swapfile = false,
 
-	textwidth = 80,
+	-- textwidth = 80,
 
 	clipboard = "unnamedplus",
 }
