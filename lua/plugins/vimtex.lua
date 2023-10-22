@@ -7,6 +7,8 @@ return {
 		vim.cmd([[
     let g:tex_flavor = 'latex'
     let g:vimtex_compiler_progname = 'nvr'
+    let g:vimtex_compiler_method = 'latexmk'
+    let g:vimtex_syntax_enabled = 0
 
 
     """""""""""""""""
@@ -33,7 +35,11 @@ return {
           autocmd!
           autocmd User VimtexEventCompileSuccess silent exe '!latexmk -c'
         augroup END
-        let g:vimtex_view_general_viewer = "sioyek"
+        " autocmd User VimtexEventCompileStarted call VimtexView()
+        " let g:vimtex_view_general_viewer = "sioyek"
+        let g:vimtex_view_general_viewer = 'sioyek'
+        let g:vimtex_view_automatic = 1
+        " let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
       ]])
 	end,
 }
