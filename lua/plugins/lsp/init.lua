@@ -32,7 +32,10 @@ return {
         "MasonUninstallAll",
         "MasonLog",
       },
-      dependencies = "williamboman/mason-lspconfig.nvim",
+      dependencies = {
+        "williamboman/mason-lspconfig.nvim",
+        "mfussenegger/nvim-jdtls",
+      },
       config = function()
         local mason = require("mason")
         local mason_lspconfig = require("mason-lspconfig")
@@ -71,6 +74,7 @@ return {
             if require_ok then
               opts = vim.tbl_deep_extend("force", server, opts)
             end
+
             lspconfig[server_name].setup(opts)
           end,
         })
