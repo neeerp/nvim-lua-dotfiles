@@ -17,15 +17,16 @@ local options = {
 
 	undofile = true,
 	swapfile = false,
+	updatetime = 200,
 
 	-- textwidth = 80,
 
 	clipboard = "unnamedplus",
 }
 
-local globals = {
-	mapleader = " ",
-}
+-- local globals = {
+-- 	mapleader = " ",
+-- }
 
 set_options(options)
-set_globals(globals)
+-- set_globals(globals)
