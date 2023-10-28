@@ -54,7 +54,7 @@ end
 -- Highlight the symbol under the cursor
 local function lsp_highlight(client, bufnr)
 	if client.supports_method("textDocument/documentHighlight") then
-		augroup("lsp_document_gighlight", {
+		augroup("lsp_document_highlight", {
 			clear = false,
 		})
 
