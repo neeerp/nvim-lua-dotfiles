@@ -38,13 +38,11 @@ return {
 			-- 	in_select = false,
 			-- },
 			--
-			-- finder = {
-			-- 	edit = { "o", "<CR>" },
-			-- 	vsplit = "s",
-			-- 	split = "i",
-			-- 	tabe = "t",
-			-- 	quit = { ";", "<ESC>" },
-			-- },
+			finder = {
+				keys = {
+					toggle_or_open = "<CR>",
+				},
+			},
 			--
 			-- diagnostic = {
 			-- 	insert_winblend = 0,
