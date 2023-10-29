@@ -5,4 +5,7 @@ return {
 			merge_consecutive = false,
 		})
 	end,
+	keys = {
+		{ "gtb", [[<Cmd>ToggleBlame<CR>]] },
+	},
 }
