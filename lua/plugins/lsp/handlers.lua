@@ -40,15 +40,12 @@ local function lsp_keymaps(bufnr)
 	local keymap = vim.keymap.set
 	local buf_opts = { buffer = bufnr, silent = true }
 
-	keymap("n", "gd", "<CMD>Lspsaga goto_definition<CR>", buf_opts)
-	keymap("n", "gr", "<CMD>Lspsaga finder<CR>", buf_opts)
-	keymap("n", "K", "<CMD>Lspsaga hover_doc<CR>", buf_opts)
-	keymap("i", "<C-k>", "<CMD>Lspsaga signature_help<CR>", buf_opts)
-	keymap("n", "gl", "<CMD>Lspsaga show_line_diagnostics<CR>", buf_opts)
-	keymap("n", "gc", "<CMD>Lspsaga show_line_cursor_diagnostics<CR>", buf_opts)
-	keymap("n", "gn", "<CMD>Lspsaga rename<CR>", buf_opts)
+	keymap("n", "gd", vim.lsp.buf.definition(), buf_opts)
+	keymap("n", "gr", vim.lsp.buf.references(), buf_opts)
+	keymap("n", "K", vim.lsp.buf.hover(), buf_opts)
+	keymap("n", "gn", vim.lsp.buf.rename(), buf_opts)
 	keymap("n", "gi", vim.lsp.buf.implementation, buf_opts)
-	keymap({ "n", "v" }, "<C-e>", "<cmd>Lspsaga code_action<CR>", buf_opts)
+	keymap({ "n", "v" }, "<C-e>", vim.lsp.buf.code_action(), buf_opts)
 end
 
 -- Highlight the symbol under the cursor
