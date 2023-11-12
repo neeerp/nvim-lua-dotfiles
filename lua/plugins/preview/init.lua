@@ -1,6 +1,6 @@
 return {
 	-- TeX
-	require("plugins.writing.vimtex"),
+	require("plugins.preview.vimtex"),
 
 	-- Plant UML
 	"aklt/plantuml-syntax",
