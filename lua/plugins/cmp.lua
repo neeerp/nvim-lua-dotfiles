@@ -11,6 +11,25 @@ return {
 		"L3MON4D3/LuaSnip", -- Snippet Engine (One is required!)
 		"saadparwaiz1/cmp_luasnip", -- Snippet Completions
 		"rafamadriz/friendly-snippets", -- Some useful snippets!
+		{
+			"zbirenbaum/copilot-cmp",
+			config = function()
+				require("copilot_cmp").setup()
+			end,
+			dependencies = {
+				{
+					"zbirenbaum/copilot.lua",
+					config = function()
+						require("copilot").setup({
+							suggestion = {
+								auto_trigger = true,
+								keymap = { accept = "<C-l>", next = "<C-]>", prev = "<C-[>" },
+							},
+						})
+					end,
+				},
+			},
+		},
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -117,6 +136,7 @@ return {
 				end,
 			},
 			sources = {
+				{ name = "copilot" },
 				{ name = "nvim_lsp" },
 				{ name = "nvim_lua" },
 				{ name = "luasnip" },
