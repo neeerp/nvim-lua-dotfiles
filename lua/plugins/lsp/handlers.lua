@@ -77,9 +77,6 @@ end
 M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
 	lsp_highlight(client, bufnr)
-
-	-- TODO: Why?
-	client.server_capabilities.semanticTokensProvider = nil
 end
 
 return M
