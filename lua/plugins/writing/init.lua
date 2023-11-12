@@ -1,10 +1,20 @@
 return {
+	-- TeX
 	require("plugins.writing.vimtex"),
+
+	-- Plant UML
+	"aklt/plantuml-syntax",
 	{
 		"weirongxu/plantuml-previewer.vim",
+		ft = "plantuml",
 		dependencies = {
 			"tyru/open-browser.vim",
 		},
 	},
-	"iamcco/markdown-preview.nvim",
+
+	-- Markdown
+	{
+		"iamcco/markdown-preview.nvim",
+		ft = "markdown",
+	},
 }

@@ -1,5 +1,6 @@
 return {
 	"lervag/vimtex",
+	ft = { "tex" },
 	config = function()
 		local kmap = vim.keymap.set
 		kmap({ "n", "v", "i" }, "<F5>", "<CMD>VimtexCompile<CR>")
