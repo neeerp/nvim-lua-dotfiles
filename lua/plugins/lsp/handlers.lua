@@ -40,12 +40,12 @@ local function lsp_keymaps(bufnr)
 	local keymap = vim.keymap.set
 	local buf_opts = { buffer = bufnr, silent = true }
 
-	keymap("n", "gd", vim.lsp.buf.definition(), buf_opts)
-	keymap("n", "gr", vim.lsp.buf.references(), buf_opts)
-	keymap("n", "K", vim.lsp.buf.hover(), buf_opts)
-	keymap("n", "gn", vim.lsp.buf.rename(), buf_opts)
+	keymap("n", "gd", vim.lsp.buf.definition, buf_opts)
+	keymap("n", "gr", vim.lsp.buf.references, buf_opts)
+	keymap("n", "K", vim.lsp.buf.hover, buf_opts)
+	keymap("n", "gn", vim.lsp.buf.rename, buf_opts)
 	keymap("n", "gi", vim.lsp.buf.implementation, buf_opts)
-	keymap({ "n", "v" }, "<C-e>", vim.lsp.buf.code_action(), buf_opts)
+	keymap({ "n", "v" }, "<C-e>", vim.lsp.buf.code_action, buf_opts)
 end
 
 -- Highlight the symbol under the cursor
