@@ -55,8 +55,6 @@ local function lsp_highlight(client, bufnr)
 			clear = false,
 		})
 
-		-- TODO: This threw an error with
-		-- 'Invalid 'group': 'lsp_document_highlight''
 		vim.api.nvim_clear_autocmds({
 			buffer = bufnr,
 			group = "lsp_document_highlight",

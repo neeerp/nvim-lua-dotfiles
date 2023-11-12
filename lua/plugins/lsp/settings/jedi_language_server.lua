@@ -6,5 +6,8 @@ return {
 		diagnostics = {
 			enable = true,
 		},
+		workspace = {
+			environmentPath = ".venv",
+		},
 	},
 }
