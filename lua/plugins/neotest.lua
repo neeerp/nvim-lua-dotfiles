@@ -3,6 +3,7 @@ return {
 	event = { "BufRead" },
 	cmd = { "Neotest" },
 	dependencies = {
+		"nvim-treesitter/nvim-treesitter",
 		"nvim-lua/plenary.nvim",
 		"nvim-neotest/neotest-python",
 		"antoinemadec/FixCursorHold.nvim",
