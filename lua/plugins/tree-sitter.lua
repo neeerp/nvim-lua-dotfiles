@@ -5,6 +5,7 @@ return {
 	build = ":TSUpdate",
 	config = function()
 		local configs = require("nvim-treesitter.configs")
+		vim.filetype.add({ extensino = { templ = "templ" } })
 		configs.setup({
 			ensure_installed = {
 				"lua",
@@ -16,6 +17,8 @@ return {
 				"yaml",
 				"json",
 				"toml",
+				"templ",
+				"go",
 			},
 
 			auto_install = true,

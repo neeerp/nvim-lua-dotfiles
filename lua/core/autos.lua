@@ -25,3 +25,5 @@ autocmd("VimEnter", {
 	group = general,
 	desc = "Open tree when vim is opened on a directory",
 })
+
+vim.cmd([[au BufRead,BufNewFile *.templ set filetype=templ]])

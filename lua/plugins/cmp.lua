@@ -8,28 +8,32 @@ return {
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-nvim-lua",
-		"L3MON4D3/LuaSnip", -- Snippet Engine (One is required!)
+		{
+			"L3MON4D3/LuaSnip", -- Snippet Engine (One is required!)
+			version = "v2.*",
+			build = "make install_jsregexp",
+		},
 		"saadparwaiz1/cmp_luasnip", -- Snippet Completions
 		"rafamadriz/friendly-snippets", -- Some useful snippets!
-		{
-			"zbirenbaum/copilot-cmp",
-			config = function()
-				require("copilot_cmp").setup()
-			end,
-			dependencies = {
-				{
-					"zbirenbaum/copilot.lua",
-					config = function()
-						require("copilot").setup({
-							suggestion = {
-								auto_trigger = true,
-								keymap = { accept = "<C-l>", next = "<C-]>", prev = "<C-[>" },
-							},
-						})
-					end,
-				},
-			},
-		},
+		-- {
+		-- 	"zbirenbaum/copilot-cmp",
+		-- 	config = function()
+		-- 		require("copilot_cmp").setup()
+		-- 	end,
+		-- 	dependencies = {
+		-- 		{
+		-- 			"zbirenbaum/copilot.lua",
+		-- 			config = function()
+		-- 				require("copilot").setup({
+		-- 					suggestion = {
+		-- 						auto_trigger = true,
+		-- 						keymap = { accept = "<C-l>", next = "<C-]>", prev = "<C-[>" },
+		-- 					},
+		-- 				})
+		-- 			end,
+		-- 		},
+		-- 	},
+		-- },
 	},
 	config = function()
 		local cmp = require("cmp")
